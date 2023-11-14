@@ -7,17 +7,18 @@ Original file is located at
     https://colab.research.google.com/drive/1cDutkh99rEzBikMSDjfBhCtv4ZzHAmfl
 """
 
-seq_path = "dataset.fa"
-per_protein_path = "dataset.h5" # where to store the embeddings
-per_residue = False
-per_protein = True
-sec_struct = False
-
 from transformers import T5EncoderModel, T5Tokenizer
 import torch
 import h5py
 import time
+import sys
 device = torch.device('cuda:0')
+
+seq_path = sys.argv[1]
+per_protein_path = sys.argv[2] # where to store the embeddings
+per_residue = False
+per_protein = True
+sec_struct = False
 
 # Load ProtT5 in half-precision (more specifically: the encoder-part of ProtT5-XL-U50) 
 def get_T5_model():
