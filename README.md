@@ -1,7 +1,7 @@
 # KO-Identification
 
 ## Requirements
-- Python 3.9
+- Python 3.6
 - Dependencies: See requirements.txt
 
 ## Getting Started
