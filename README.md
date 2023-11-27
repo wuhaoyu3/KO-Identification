@@ -6,13 +6,13 @@
 
 ## Getting Started
 ```sh
-# get ProtT5 embedding
+# get ProtT5 embedding (input format: fasta, output format: h5)
 python prott5_seq2embedding.py seq_file.fa embedding_file.h5
 
-# use the trained classifier to make predictions
+# use the trained classifier to make predictions (output format: csv)
 python prediction.py model/mlp_pipe.pt embedding_file.h5 result_file
 
-# cluster
+# cluster (result file format: csv)
 python cluster.py embedding_file.h5 reference.h5 result_dir
 
 # train and test the classifier (The paths to the model and dataset can be modified in the python file)
