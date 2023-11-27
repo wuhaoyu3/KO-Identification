@@ -9,10 +9,10 @@ See requirements.txt
 python prott5_seq2embedding.py seq_file.fa embedding_file.h5
 
 # use the trained classifier to make predictions (output format: csv)
-python prediction.py model/mlp_pipe.pt embedding_file.h5 result_file.csv
+python prediction.py model/mlp_pipe.pt embedding_file.h5 cls_result.csv
 
 # cluster (result file format: csv)
-python cluster.py embedding_file.h5 reference.h5 result_file.csv
+python cluster.py embedding_file.h5 reference.h5 cluster_result.csv
 
 # train and test the classifier (The paths to the model and dataset can be modified in the python file)
 python cls/mlp_train.py
