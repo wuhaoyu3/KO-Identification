@@ -1,8 +1,7 @@
 # KO-Identification
 
 ## Requirements
-- Python 3.6
-- Dependencies: See requirements.txt
+See requirements.txt
 
 ## Getting Started
 ```sh
