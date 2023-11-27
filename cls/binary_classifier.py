@@ -1,6 +1,5 @@
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader, random_split
-from transformers import get_linear_schedule_with_warmup
 import os
 import h5py
 import torch
