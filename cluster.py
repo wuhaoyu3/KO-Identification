@@ -47,11 +47,12 @@ pairwise_distances = _pairwise_distances(
 
 # get best match
 with open(result_file_path, 'w') as f:
-    for i in range(len(matrix)):
-        f.write("\"" + list1[i]+"\",")
-        min_index = np.where(matrix[i] == np.amin(matrix[i]))[0]
-        for j in range(len(min_index)):
-            f.write(str(matrix[i][j])+",")
-            f.write("\""+list2[j].split()[0]+'\",\"'+list2[j].split()[1]+'\",')
+    for i in range(len(pairwise_distances)):
+        f.write("\"" + queries[i]+"\",")
+        row = pairwise_distances[i]
+        min_index = np.where(row == np.amin(row))[0]
+        for index in range(len(min_index)):
+            f.write(str(row[index])+",")
+            f.write("\""+references[index].split()[0]+'\",\"'+references[index].split()[1]+'\",')
         print("\r{}".format(i).ljust(20), end='', flush=True)
         f.write("\n")
