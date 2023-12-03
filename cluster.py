@@ -49,10 +49,9 @@ pairwise_distances = _pairwise_distances(
 with open(result_file_path, 'w') as f:
     for i in range(len(matrix)):
         f.write("\"" + list1[i]+"\",")
-        m = list(matrix[i])
-        number = min(m)
-        index = m.index(number)
-        f.write(str(number)+",")
-        f.write("\""+list2[index].split()[0]+'\",\"'+list2[index].split()[1]+'\",')
+        min_index = np.where(matrix[i] == np.amin(matrix[i]))[0]
+        for j in range(len(min_index)):
+            f.write(str(matrix[i][j])+",")
+            f.write("\""+list2[j].split()[0]+'\",\"'+list2[j].split()[1]+'\",')
         print("\r{}".format(i).ljust(20), end='', flush=True)
         f.write("\n")
