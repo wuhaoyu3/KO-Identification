@@ -1,7 +1,7 @@
 import torch
 import binary_classifier
 import torch.nn as nn
-from torch.utils.data import DataLoader
+from torch.utils.data import DataLoader, ConcatDataset
 
 gpu = 'cuda:0'
 batch_size = 200
