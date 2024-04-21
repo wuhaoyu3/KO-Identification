@@ -1,5 +1,6 @@
 For ProtT5
 transformers==4.27.1
+sentencepiece
 
 For other steps
 scikit-learn==0.24.2
