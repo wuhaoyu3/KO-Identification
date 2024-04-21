@@ -18,7 +18,7 @@ out_file = sys.argv[3]
 # load the model
 device = torch.device(gpu)
 model = binary_classifier.MLPClassifier(input_size, hidden_size, output_size).to(device)
-model.load_state_dict(torch.load(model_path))
+model.load_state_dict(torch.load(model_path, map_location=device))
 
 # set the model to evaluation mode
 model.eval()
