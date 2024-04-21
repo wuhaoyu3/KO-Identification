@@ -1,6 +1,7 @@
 import torch
 import binary_classifier
 import torch.nn as nn
+from torch.utils.data import ConcatDataset
 
 gpu = 'cuda:0'
 num_epochs = 1000
