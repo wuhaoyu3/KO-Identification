@@ -51,7 +51,8 @@ with open(result_file_path, 'w') as f:
         f.write("\"" + queries[i]+"\",")
         row = pairwise_distances[i]
         min_index = np.where(row == np.amin(row))[0]
-        for index in range(len(min_index)):
+        for i in range(len(min_index)):
+            index = min_index[i]
             f.write(str(row[index])+",")
             f.write("\""+references[index].split()[0]+'\",\"'+references[index].split()[1]+'\",')
         print("\r{}".format(i).ljust(20), end='', flush=True)
